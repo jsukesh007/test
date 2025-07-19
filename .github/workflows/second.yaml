@@ -12,6 +12,7 @@ jobs:
       - name: multiline command
         run: |
           echo good 
+          sleep 100
           echo bye
 
   parallel-job:
@@ -27,7 +28,7 @@ jobs:
       - name: exec pwsh
         run: write-output "Windows String"
       - name: Error Step
-        run: doesnotexits
+        run: write-output "sukesh"
 
   another-parallel-job:
     runs-on: ubuntu-latest
