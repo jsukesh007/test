@@ -1,0 +1,14 @@
+name: sukeshwf
+on:
+  - push
+
+jobs:
+  run-shell-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo a sukesh string
+        run: echo "hi sukesh"
+      - name: multiline command
+        run: |
+          echo good 
+          echo bye
