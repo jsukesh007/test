@@ -3,7 +3,7 @@ on:
   - push
 
 jobs:
-  run-shell-commands:
+  run-shell-commands-job:
     runs-on: ubuntu-latest
     steps:
       - name: echo a sukesh string
@@ -12,3 +12,20 @@ jobs:
         run: |
           echo good 
           echo bye
+
+  parallel-job:
+    runs-on: macos-latest
+    steps:
+      - name: view SW Version
+        run: sw_vers
+  dependent-job-job:
+    runs-on: windows-latest
+    needs: run-shell-commands-job
+    steps:
+      - name: exec pwsh
+        run: write-output "Windows String"
+      - name: Error Step
+        run: doesnotexits
+
+
+
