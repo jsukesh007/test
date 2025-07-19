@@ -1,4 +1,5 @@
 name: mysecondwf
+run-name: this is default of all time
 on:
   - push
   - workflow_dispatch
@@ -8,6 +9,7 @@ jobs:
   run-shell-commands-job:
     runs-on: ubuntu-latest
     steps:
+
       - name: echo a sukesh string
         run: echo "hi sukesh"
       - name: multiline command
